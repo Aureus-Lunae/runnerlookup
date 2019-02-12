@@ -41,7 +41,14 @@
 		<hr />
 
 		<div class="PB" ng-repeat="pbRun in pbRuns">
-			<h2 class="title">{{pbRun.game.data.names.international}}</h2>
+			<h2 class="title">{{pbRun.game.data.names.international}} - {{pbRun.category.data.name}}</h2>
 		</div>
+
+		<hr />
+
+		<div class="pages" ng-repeat="page in pagination.links">
+			<button ng-click="changePage(page.uri)">{{page.rel}}</button>
+		</div>
+
 	</div>
 </div>
