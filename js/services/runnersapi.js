@@ -26,6 +26,18 @@ runnersApp.factory(`runners`, [`$http`, function($http) {
 			});
 	}
 
+	service.runnerPB = (runnerID) => {
+		return $http.get(
+				`https://www.speedrun.com/api/v1/users/${runnerID}/personal-bests?embed=game,category`
+			)
+			.then(function(data) {
+				return data;
+			})
+			.catch(function(data) {
+				return data;
+			});
+	}
+
 	service.pageRunners = (pageUrl) => {
 		return $http.get(pageUrl)
 			.then(function(data) {
@@ -37,3 +49,4 @@ runnersApp.factory(`runners`, [`$http`, function($http) {
 
 	return service;
 }]);
+// https://www.speedrun.com/api/v1/users/${runnerID}/personal-bests?embed=game,category
