@@ -2,6 +2,18 @@
 
 	<div class="container">
 		<h2><a href="/">Back</a></h2>
+		<div ng-if="runner['name-style'].style === 'gradient'">
+			<h1 class="runner_name" style="
+				background: linear-gradient(to right,{{runner['name-style']['color-from'].dark}} 0%, {{runner['name-style']['color-to'].dark}} 100%);
+				background-clip: text;
+ 				-webkit-background-clip: text;
+ 				color: transparent;
+ 				display: inline-block;
+			">{{runner.names.international}}</h1>
+		</div>
+		<div ng-if="runner['name-style'].style === 'solid'">
+			<h1 class="runner_name" style="color: {{runner['name-style'].color.dark}}">{{runner.names.international}}</h1>
+		</div>
 
 	</div>
 </div>

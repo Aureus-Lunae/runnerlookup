@@ -1,6 +1,6 @@
 runnersApp.controller(`runnersCtrl`, [`$scope`, `runners`, function($scope,
 	runners) {
-	console.log(`controller started`);
+	console.log(`Runners search controller started`);
 
 	$scope.getRunners = function() {
 		console.log(`getRunners Started`);

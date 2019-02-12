@@ -7,7 +7,7 @@ runnersApp.config(function($routeProvider) {
 			templateUrl: `views/home.html`
 		})
 		.when(`/runner/:id`, {
-			// 	controller: `runnerCtrl`,
+			controller: `runnerCtrl`,
 			templateUrl: `views/runner.html`
 		})
 		.otherwise({
