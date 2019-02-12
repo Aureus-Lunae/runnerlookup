@@ -2,39 +2,41 @@
 
 	<div class="container">
 		<h2><a href="/">Back</a></h2>
-
-		<!-- Username, depending on gradient or not on SRC -->
-		<div ng-if="runner['name-style'].style === 'gradient'">
-			<h1 class="runner_name" style="
+		<div class="user_data">
+			<!-- Username, depending on gradient or not on SRC -->
+			<div ng-if="runner['name-style'].style === 'gradient'">
+				<h1 class="runner_name" style="
 				background: linear-gradient(to right,{{runner['name-style']['color-from'].light}} 0%, {{runner['name-style']['color-to'].light}} 100%);
 				background-clip: text;
  				-webkit-background-clip: text;
  				color: transparent;
  				display: inline-block;
 			">{{runner.names.international}}</h1>
-		</div>
-		<div ng-if="runner['name-style'].style === 'solid'">
-			<h1 class="runner_name" style="color: {{runner['name-style'].color.light}}">{{runner.names.international}}</h1>
-		</div>
+			</div>
+			<div ng-if="runner['name-style'].style === 'solid'">
+				<h1 class="runner_name" style="color: {{runner['name-style'].color.light}}">{{runner.names.international}}</h1>
+			</div>
 
-		<!-- Date joined -->
-		<div class="starting_date">Joined: {{runner.signup | date }}</div>
+			<!-- Date joined -->
+			<div class="starting_date">Joined: {{runner.signup | date }}</div>
 
-		<!-- Location -->
-		<div ng-if="runner.location.country.names.international" class="country">Country:
-			{{runner.location.country.names.international}}</div>
-		<div ng-if="runner.location.region.names.international">Region:
-			{{runner.location.region.names.international | split:',':0 }}</div>
+			<!-- Location -->
+			<div ng-if="runner.location.country.names.international" class="country">Country:
+				{{runner.location.country.names.international}}</div>
+			<div ng-if="runner.location.region.names.international">Region:
+				{{runner.location.region.names.international | split:',':0 }}</div>
 
-		<!-- Social Media -->
-		<div class="social_media"> <a href="{{runner.twitch.uri}}"><i class="fab fa-twitch"></i></a></div>
-		<div class="social_media"> <a href="{{runner.twitter.uri}}"><i class="fab fa-twitter"></i></a>
+			<!-- Social Media -->
+			<div class="social_media"> <a href="{{runner.twitch.uri}}"><i class="fab fa-twitch"></i></a></div>
+			<div class="social_media"> <a href="{{runner.twitter.uri}}"><i class="fab fa-twitter"></i></a>
+			</div>
+			<div class="social_media"> <a href="{{runner.youtube.uri}}"><i class="fab fa-youtube"></i></a>
+			</div>
+			<div class="social_media"> <a href="{{runner.speedrunslive.uri}}"><i class="fas fa-flag-checkered"></i>SRL</a>
+			</div>
+			<div class="social_media"> <a href="{{runner.weblink}}"><i class="fas fa-flag-checkered"></i>SRC</a>
+			</div>
 		</div>
-		<div class="social_media"> <a href="{{runner.youtube.uri}}"><i class="fab fa-youtube"></i></a>
-		</div>
-		<div class="social_media"> <a href="{{runner.speedrunslive.uri}}"><i class="fas fa-flag-checkered"></i>SRL</a>
-		</div>
-		<div class="social_media"> <i class="fas fa-flag-checkered"></i>SRC </div>
 
 	</div>
 </div>
