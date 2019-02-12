@@ -1,0 +1,20 @@
+<div class="main">
+	<form ng-submit="getRunners()">
+		<input type="text" name="search" ng-model="search" id="search">
+		<input type="submit">
+	</form>
+	<div class="container">
+		<h2 ng-if="runners">Runners</h2>
+		<div class="runners" ng-repeat="runner in runners">
+			<a href="#/runner/{{runner.id}}"><p>{{ runner.names.international }} - 
+			{{ runner.signup | date }}</p></a>
+		</div>
+
+		<div ng-if="runners.length === 0">No results<div>
+
+				<div class="pages" ng-repeat="page in pagination.links">
+					<button ng-click="changePage(page.uri)">{{page.rel}}</button>
+				</div>
+
+			</div>
+		</div>
