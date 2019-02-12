@@ -9,6 +9,10 @@ runnersApp.controller(`runnerCtrl`, [`$scope`, `runners`, `$routeParams`,
 					console.log(runnerInfo.data);
 					$scope.runner = runnerInfo.data.data;
 				});
+
+			runners.getPB = function() {
+
+			}
 		}
 
 		getRunnerInfo();

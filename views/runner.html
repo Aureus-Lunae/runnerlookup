@@ -27,15 +27,22 @@
 				{{runner.location.region.names.international | split:',':0 }}</div>
 
 			<!-- Social Media -->
-			<div class="social_media"> <a href="{{runner.twitch.uri}}"><i class="fab fa-twitch"></i></a></div>
-			<div class="social_media"> <a href="{{runner.twitter.uri}}"><i class="fab fa-twitter"></i></a>
+			<div ng-if="runner.twitch.uri" class="social_media"> <a href="runner.twitch.uri"><i class="fab fa-twitch"></i></a></div>
+			<div ng-if="runner.twitter.uri" class="social_media"> <a href="runner.twitter.uri"><i class="fab fa-twitter"></i></a>
 			</div>
-			<div class="social_media"> <a href="{{runner.youtube.uri}}"><i class="fab fa-youtube"></i></a>
+			<div ng-if="runner.youtube.uri" class="social_media"> <a href="runner.youtube.uri"><i class="fab fa-youtube"></i></a>
 			</div>
-			<div class="social_media"> <a href="{{runner.speedrunslive.uri}}"><i class="fas fa-flag-checkered"></i>SRL</a>
+			<div ng-if="runner.speedrunslive.uri" class="social_media"> <a href="runner.speedrunslive.uri"><i class="fas fa-flag-checkered"></i>SRL</a>
 			</div>
-			<div class="social_media"> <a href="{{runner.weblink}}"><i class="fas fa-flag-checkered"></i>SRC</a>
+			<div ng-if="runner.weblink" class="social_media"> <a href="{{runner.weblink}}"><i class="fas fa-flag-checkered"></i>SRC</a>
 			</div>
+		</div>
+
+		<hr />
+
+		<div class="PB">
+
+
 		</div>
 
 	</div>
