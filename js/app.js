@@ -49,3 +49,29 @@ runnersApp.filter(`speedruntime`, function() {
 		return `${hour}:${minutes}:${seconds}`;
 	}
 });
+
+runnersApp.filter(`video`, [`$sce`, function($sce) {
+	return function(input) {
+		let host = input.split(`.`)[1];
+		console.log(host);
+		let url;
+		switch (host){
+			case `twitch`:
+				url = `https://player.twitch.tv/?video=v` + input.split(`videos/`)[1] + `&autoplay=false`;
+				if (url	=== undefined ){
+					url = `https://player.twitch.tv/?video=v` + input.split(`/v/`)[1] + `&autoplay=false`;
+				}
+				break;
+			case `youtube`:
+				url = `https://www.youtube.com/embed/` + input.split(`?v=`)[1];
+				break;
+			default:
+				url = `Not supported`;
+				break;
+		}
+
+		trustedUrl = $sce.trustAsResourceUrl(url);
+
+		return trustedUrl;
+	}
+}]);

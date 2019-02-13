@@ -50,8 +50,13 @@
 			<div class="level" ng-if="pbRun.level.data.name">Level:
 				{{pbRun.level.data.name}}</div>
 			<div class="times">{{pbRun.times.primary_t | speedruntime }}</div>
-		</div>
+			<div>Test</div>
 
+			<div class="video" ng-repeat="video in pbRun.videos.links"> 
+			<iframe width="560" height="315" src="{{ video.uri | video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen >Not supported</iframe>
+			</div>
+			
+		</div>
 		<hr />
 
 
