@@ -53,7 +53,6 @@ runnersApp.filter(`speedruntime`, function() {
 runnersApp.filter(`video`, [`$sce`, function($sce) {
 	return function(input) {
 		let host = input.split(`.`)[1];
-		console.log(host);
 		let url;
 		switch (host){
 			case `twitch`:
@@ -64,14 +63,14 @@ runnersApp.filter(`video`, [`$sce`, function($sce) {
 				break;
 			case `youtube`:
 				url = `https://www.youtube.com/embed/` + input.split(`?v=`)[1];
+				url = url.split(`&t=`)[0];
 				break;
 			default:
-				url = `Not supported`;
+				url = `https://www.youtube.com/embed/` + input.split(`/`)[3];
+				url = url.split(`&t=`)[0];
 				break;
 		}
 
-		trustedUrl = $sce.trustAsResourceUrl(url);
-
-		return trustedUrl;
+		return $sce.trustAsResourceUrl(url);
 	}
 }]);
