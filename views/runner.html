@@ -51,10 +51,14 @@
 				{{pbRun.level.data.name}}</div>
 
 			<div class="date">{{pbRun.date | date }}</div>
-			<div class="console"> {{ pbRun.platform.data.name }} </div>
-			<div class="region"> {{ pbRun.region.data.name }} </div>
+			<div class="console"> {{ pbRun.platform.data.name }}
+				<span class="emulated" ng-if="pbRun.system.emulated">[emu]</span>
+				<span class="region" ng-if="pbRun.region.data.name"> [{{ pbRun.region.data.name }}] </span>
+			</div>
 
 			<div class="times"> {{ pbRun.times.primary_t | speedruntime }}</div>
+
+			<!-- pbRun.category.data.rules -->
 	
 			<!-- Videos -->
 			<div class="video" ng-if="pbRun.videos.links" ng-repeat="video in pbRun.videos.links"> 
