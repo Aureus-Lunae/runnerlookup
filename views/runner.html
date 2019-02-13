@@ -1,14 +1,10 @@
-<div class="main">
-
-	<div class="container">
-		<h2><a href="/">Back</a></h2>
-
+	<div class="side">
 		<!-- Usernames -->
 		<div class="user_data">
 			<!-- Username, depending on gradient or not on SRC -->
 			<div ng-if="runner['name-style'].style === 'gradient'">
 				<h1 class="runner_name" style="
-				background: linear-gradient(to right,{{runner['name-style']['color-from'].light}} 0%, {{runner['name-style']['color-to'].light}} 100%);
+				background: linear-gradient(to right,{{runner['name-style']['color-from'].dark}} 0%, {{runner['name-style']['color-to'].dark}} 100%);
 				background-clip: text;
  				-webkit-background-clip: text;
  				color: transparent;
@@ -16,16 +12,16 @@
 			">{{runner.names.international}}</h1>
 			</div>
 			<div ng-if="runner['name-style'].style === 'solid'">
-				<h1 class="runner_name" style="color: {{runner['name-style'].color.light}}">{{runner.names.international}}</h1>
+				<h1 class="runner_name" style="color: {{runner['name-style'].color.dark}}">{{runner.names.international}}</h1>
 			</div>
 
 			<!-- Date joined -->
-			<div class="starting_date">Joined: {{runner.signup | date }}</div>
+			<div class="starting_date" ng-if="runner.signup">Joined: {{runner.signup | date }}</div>
 
 			<!-- Location -->
 			<div ng-if="runner.location.country.names.international" class="country">Country:
 				{{runner.location.country.names.international}}</div>
-			<div ng-if="runner.location.region.names.international">Region:
+			<div ng-if="runner.location.region.names.international" class="region">Region:
 				{{runner.location.region.names.international | split:',':0 }}</div>
 
 			<!-- Social Media -->
@@ -34,13 +30,14 @@
 			</div>
 			<div ng-if="runner.youtube.uri" class="social_media"> <a href="runner.youtube.uri"><i class="fab fa-youtube"></i></a>
 			</div>
-			<div ng-if="runner.speedrunslive.uri" class="social_media"> <a href="runner.speedrunslive.uri"><i class="fas fa-flag-checkered"></i>SRL</a>
+			<div ng-if="runner.speedrunslive.uri" class="social_media"> <a href="runner.speedrunslive.uri"><i class="fas fa-flag-checkered"></i></a>
 			</div>
-			<div ng-if="runner.weblink" class="social_media"> <a href="{{runner.weblink}}"><i class="fas fa-flag-checkered"></i>SRC</a>
+			<div ng-if="runner.weblink" class="social_media"> <a href="{{runner.weblink}}"><i class="fas fa-trophy"></i></a>
 			</div>
 		</div>
+	</div>
 
-		<hr />
+	<div class="main">
 
 		<!-- Latest Runs -->
 		<div class="PB" ng-repeat="pbRun in pbRuns">
@@ -62,7 +59,7 @@
 	
 			<!-- Videos -->
 			<div class="video" ng-if="pbRun.videos.links" ng-repeat="video in pbRun.videos.links"> 
-				<iframe width="560" height="315" ng-src="{{ video.uri | video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen >Not supported</iframe>
+				<iframe ng-src="{{ video.uri | video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="youtube">Not supported</iframe>
 			</div>
 
 			<!-- Comments -->
@@ -70,7 +67,6 @@
 
 
 		</div>
-		<hr />
 
 
 		<!-- Pagination -->
@@ -79,4 +75,3 @@
 		</div>
 
 	</div>
-</div>

@@ -1,8 +1,9 @@
-<div class="main">
+<div class="search">
 	<form ng-submit="getRunners()">
 		<input type="text" name="search" ng-model="search" id="search">
-		<input type="submit">
+		<button type="submit">Search</button>
 	</form>
+
 	<div class="container">
 		<h2 ng-if="runners">Runners</h2>
 		<div class="runners" ng-repeat="runner in runners">

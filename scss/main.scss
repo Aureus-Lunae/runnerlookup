@@ -1,0 +1,75 @@
+@import 'variables';
+
+.debug{
+	border: 1px solid red;
+}
+
+html {
+	font-family: 'Laila', serif;
+	font-size: 16px;
+}
+
+body {
+	background: $primary-color;
+	color: $primary-text-color;
+	margin: 0;
+	display: grid;
+	grid-gap: 15px;
+	grid-template-areas:
+	"header"
+	"content"
+	"sidebar"
+	"ad"
+	"footer";
+}
+
+a{
+	color: $primary-text-color;
+}
+
+/* Grid Areas */
+.content_wrapper{
+	grid-area: content;
+	padding: 5px;
+	display: grid;
+	grid-gap: 10px;
+	grid-template-areas:
+	"side"
+	"main";
+
+	.side{
+		grid-area: side;
+	}
+
+	.main{
+		grid-area: main;
+	}
+
+	.search{
+		grid-area: side / side / main / main;
+	}
+}
+
+header{
+	grid-area: header;
+	position: sticky;
+	top: 0;
+}
+
+.sidebar{
+	grid-area: sidebar;
+}
+
+.ad{
+	grid-area: ad;
+}
+
+.footer_wrapper{
+	grid-area: footer;
+}
+
+
+//Imports 
+@import 'header';
+@import 'media';
+@import 'userdata';

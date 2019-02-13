@@ -14,16 +14,20 @@
 	 crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-route.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Laila:400,700&amp;subset=latin-ext" rel="stylesheet">
+		<link href="css/main.css" rel="stylesheet">
 </head>
 
 <body ng-app="runnersApp">
 
 	<header>
-
+		<a href="/"><div class="headerwrapper">
+			<h1>Speedrunner Lookup</h1>
+		</div></a>
 	</header>
 
-	<div class="wrapper">
-		<div ng-view></div>
+	<div class="content_wrapper" ng-view>
+
 	</div>
 
 
