@@ -44,8 +44,8 @@
 
 		<!-- Latest Runs -->
 		<div class="PB" ng-repeat="pbRun in pbRuns">
-			<h2 class="title">{{pbRun.game.data.names.international}} 
-				<span ng-if="pbRun.category.data.name"> - {{pbRun.category.data.name}}<span>
+			<h2 class="title"><a href="{{pbRun.weblink}}"> {{pbRun.game.data.names.international}} 
+				<span ng-if="pbRun.category.data.name"> - {{pbRun.category.data.name}}<span></a>
 			</h2>
 			<div class="level" ng-if="pbRun.level.data.name">Level:
 				{{pbRun.level.data.name}}</div>
