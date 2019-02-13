@@ -49,8 +49,12 @@
 			</h2>
 			<div class="level" ng-if="pbRun.level.data.name">Level:
 				{{pbRun.level.data.name}}</div>
-			<div class="date">Ran on: {{pbRun.date | date }}</div>
-			<div class="times">{{pbRun.times.primary_t | speedruntime }}</div>
+
+			<div class="date">{{pbRun.date | date }}</div>
+			<div class="console"> {{ pbRun.platform.data.name }} </div>
+			<div class="region"> {{ pbRun.region.data.name }} </div>
+
+			<div class="times"> {{ pbRun.times.primary_t | speedruntime }}</div>
 	
 			<!-- Videos -->
 			<div class="video" ng-if="pbRun.videos.links" ng-repeat="video in pbRun.videos.links"> 
@@ -58,7 +62,7 @@
 			</div>
 
 			<!-- Comments -->
-			<div class="comment" style="white-space: pre-wrap;">{{pbRun.comment}}</div>
+			<div class="comment" style="white-space: pre-wrap;"> {{ pbRun.comment }} </div>
 
 
 		</div>
