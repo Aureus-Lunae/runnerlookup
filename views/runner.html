@@ -56,17 +56,17 @@
 				<iframe ng-src="{{ video.uri | video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen gesture="media" class="youtube">Not supported</iframe>
 			</div>
 
-			<div class="date">{{pbRun.date | date }}</div>
-			<div class="console"> {{ pbRun.platform.data.name }}
-				<span class="emulated" ng-if="pbRun.system.emulated">[emu]</span>
-				<span class="region" ng-if="pbRun.region.data.name"> [{{ pbRun.region.data.name }}] </span>
+			<!-- Data under video -->
+			<div class="data">
+				<div class="date">{{pbRun.date | date }}</div>
+				<div class="console"> {{ pbRun.platform.data.name }}
+					<span class="emulated" ng-if="pbRun.system.emulated">[emu]</span>
+					<span class="region" ng-if="pbRun.region.data.name"> [{{ pbRun.region.data.name }}] </span>
+				</div>
 			</div>
-
-			
 
 			<!-- pbRun.category.data.rules -->
 	
-
 
 			<!-- Comments -->
 			<div class="comment" style="white-space: pre-wrap;"> {{ pbRun.comment }} </div>

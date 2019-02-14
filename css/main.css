@@ -192,5 +192,14 @@ header .headerwrapper h1 {
 .runs .times {
   font-size: 1.1em;
 }
+.runs .data {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.runs .comment {
+  float: none;
+}
 
 /*# sourceMappingURL=main.css.map */
