@@ -33,6 +33,12 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		margin-bottom: 5px;
+		.console{
+			.emulated{
+				vertical-align: super;
+				font-size: 0.7em;
+			}
+		}
 	}
 
 	.comment{

@@ -198,6 +198,10 @@ header .headerwrapper h1 {
   justify-content: space-between;
   margin-bottom: 5px;
 }
+.runs .data .console .emulated {
+  vertical-align: super;
+  font-size: 0.7em;
+}
 .runs .comment {
   float: none;
 }
