@@ -1,83 +1,86 @@
-	<div class="side">
-		<!-- Usernames -->
-		<div class="user_data">
-			<!-- Username, depending on gradient or not on SRC -->
-			<div ng-if="runner['name-style'].style === 'gradient'">
-				<h1 class="runner_name" style="
+<div class="side">
+	<!-- Usernames -->
+
+	<div class="user_data">
+
+		<!-- Username, depending on gradient or not on SRC -->
+		<div ng-if="runner['name-style'].style === 'gradient'">
+			<h1 class="runner_name" style="
 				background: linear-gradient(to right,{{runner['name-style']['color-from'].dark}} 0%, {{runner['name-style']['color-to'].dark}} 100%);
 				background-clip: text;
  				-webkit-background-clip: text;
  				color: transparent;
  				display: inline-block;
 			">{{runner.names.international}}</h1>
-			</div>
-			<div ng-if="runner['name-style'].style === 'solid'">
-				<h1 class="runner_name" style="color: {{runner['name-style'].color.dark}}">{{runner.names.international}}</h1>
-			</div>
-
-			<!-- Date joined -->
-			<div class="starting_date" ng-if="runner.signup">Joined: {{runner.signup | date }}</div>
-
-			<!-- Location -->
-			<div ng-if="runner.location.country.names.international" class="country">Country:
-				{{runner.location.country.names.international}}</div>
-			<div ng-if="runner.location.region.names.international" class="region">Region:
-				{{runner.location.region.names.international | split:',':0 }}</div>
-
-			<!-- Social Media -->
-			<div ng-if="runner.twitch.uri" class="social_media"> <a href="runner.twitch.uri"><i class="fab fa-twitch"></i></a></div>
-			<div ng-if="runner.twitter.uri" class="social_media"> <a href="runner.twitter.uri"><i class="fab fa-twitter"></i></a>
-			</div>
-			<div ng-if="runner.youtube.uri" class="social_media"> <a href="runner.youtube.uri"><i class="fab fa-youtube"></i></a>
-			</div>
-			<div ng-if="runner.speedrunslive.uri" class="social_media"> <a href="runner.speedrunslive.uri"><i class="fas fa-flag-checkered"></i></a>
-			</div>
-			<div ng-if="runner.weblink" class="social_media"> <a href="{{runner.weblink}}"><i class="fas fa-trophy"></i></a>
-			</div>
 		</div>
+		<div ng-if="runner['name-style'].style === 'solid'">
+			<h1 class="runner_name" style="color: {{runner['name-style'].color.dark}}">{{runner.names.international}}</h1>
+		</div>
+
+		<!-- Date joined -->
+		<div class="starting_date" ng-if="runner.signup">Joined: {{runner.signup | date }}</div>
+
+		<!-- Location -->
+		<div ng-if="runner.location.country.names.international" class="country">Country:
+			{{runner.location.country.names.international}}</div>
+		<div ng-if="runner.location.region.names.international" class="region">Region:
+			{{runner.location.region.names.international | split:',':0 }}</div>
+
+		<!-- Social Media -->
+		<div ng-if="runner.twitch.uri" class="social_media"> <a href="runner.twitch.uri"><i class="fab fa-twitch"></i></a></div>
+		<div ng-if="runner.twitter.uri" class="social_media"> <a href="runner.twitter.uri"><i class="fab fa-twitter"></i></a>
+		</div>
+		<div ng-if="runner.youtube.uri" class="social_media"> <a href="runner.youtube.uri"><i class="fab fa-youtube"></i></a>
+		</div>
+		<div ng-if="runner.speedrunslive.uri" class="social_media"> <a href="runner.speedrunslive.uri"><i class="fas fa-flag-checkered"></i></a>
+		</div>
+		<div ng-if="runner.weblink" class="social_media"> <a href="{{runner.weblink}}"><i class="fas fa-trophy"></i></a>
+		</div>
+
 	</div>
+</div>
 
-	<div class="main">
+<div class="main">
 
-		<!-- Latest Runs -->
-		<div class="runs" ng-repeat="pbRun in pbRuns">
-			<h2 class="title"><a href="{{pbRun.weblink}}"> {{pbRun.game.data.names.international}} </a></h2>
-
-			<div class="times">
-				<span ng-if="pbRun.category.data.name">{{pbRun.category.data.name}}</span>
-				<span ng-if="pbRun.category.data.name && pbRun.level.data.name"> - </span>
-				<span class="level" ng-if="pbRun.level.data.name">Level:
+	<!-- Latest Runs -->
+	<div class="runs" ng-if="pbRuns==0 && pagination.links == 0">
+		<h2 class="title">This user has no runs</h2>
+	</div>
+	<div class="runs" ng-repeat="pbRun in pbRuns">
+		<h2 class="title"><a href="{{pbRun.weblink}}"> {{pbRun.game.data.names.international}} </a></h2>
+		<div class="times">
+			<span ng-if="pbRun.category.data.name">{{pbRun.category.data.name}}</span>
+			<span ng-if="pbRun.category.data.name && pbRun.level.data.name"> - </span>
+			<span class="level" ng-if="pbRun.level.data.name">Level:
 				{{pbRun.level.data.name}}</span>
-				<span> in {{ pbRun.times.primary_t | speedruntime }}</span>
-			</div>
-
-			<!-- Videos -->
-			<div class="video" ng-if="pbRun.videos.links" ng-repeat="video in pbRun.videos.links"> 
-				<iframe ng-src="{{ video.uri | video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen gesture="media" class="youtube">Not supported</iframe>
-			</div>
-
-			<!-- Data under video -->
-			<div class="data">
-				<div class="date">{{pbRun.date | date }}</div>
-				<div class="console"> {{ pbRun.platform.data.name }}
-					<span class="emulated" ng-if="pbRun.system.emulated">[emu]</span>
-					<span class="region" ng-if="pbRun.region.data.name"> [{{ pbRun.region.data.name }}] </span>
-				</div>
-			</div>
-
-			<!-- pbRun.category.data.rules -->
-	
-
-			<!-- Comments -->
-			<div class="comment" style="white-space: pre-wrap;"> {{ pbRun.comment }} </div>
-
-
+			<span> in {{ pbRun.times.primary_t | speedruntime }}</span>
 		</div>
 
-
-		<!-- Pagination -->
-		<div class="pages" ng-repeat="page in pagination.links">
-			<button ng-click="changePage(page.uri)">{{page.rel}}</button>
+		<!-- Videos -->
+		<div class="video" ng-if="pbRun.videos.links" ng-repeat="video in pbRun.videos.links">
+			<iframe ng-src="{{ video.uri | video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen gesture="media" class="youtube">Not supported</iframe>
 		</div>
 
+		<!-- Data under video -->
+		<div class="data">
+			<div class="date">{{pbRun.date | date }}</div>
+			<div class="console"> {{ pbRun.platform.data.name }}
+				<span class="emulated" ng-if="pbRun.system.emulated">[emu]</span>
+				<span class="region" ng-if="pbRun.region.data.name"> [{{ pbRun.region.data.name }}] </span>
+			</div>
+		</div>
+
+		<!-- pbRun.category.data.rules -->
+
+		<!-- Comments -->
+		<div class="comment"> {{ pbRun.comment }} </div>
 	</div>
+
+	<!-- Pagination -->
+	<div class="pagination_runs">
+		<div class="pages" ng-repeat="page in pagination.links">
+			<button ng-click="changePage(page.uri)">{{page.rel | uppercase }}</button>
+		</div>
+	</div>
+
+</div>

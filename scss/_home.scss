@@ -1,0 +1,42 @@
+/* Home */
+
+.search {
+	.no_results {
+		display: flex;
+		justify-content: center;
+
+		h1 {
+			font-size: 3em;
+			background: linear-gradient(to right, hsla(47, 91%, 70%, 1) 0%, hsla(213, 18%, 76%, 1) 35%, hsla(213, 18%, 76%, 1) 55%, hsla(32, 75%, 68%, 1) 100%);
+			background-clip: text;
+			-webkit-background-clip: text;
+			color: transparent;
+		}
+	}
+
+	form {
+		display: flex;
+		justify-content: center;
+	}
+
+	.container {
+		h2 {
+			font-size: 1.8em;
+			display: flex;
+			justify-content: center;
+		}
+
+		.runners {
+			font-size: 1.1em;
+			display: flex;
+			justify-content: center;
+
+			a {
+				text-decoration: none;
+				padding: 2px;
+				margin-bottom: 3px;
+			}
+		}
+
+	}
+}

@@ -29,7 +29,7 @@ runnersApp.factory(`runners`, [`$http`, function($http) {
 	service.runnerPB = (runnerID) => {
 		return $http.get(
 				`https://www.speedrun.com/api/v1/runs?user=${runnerID}
-				&status=verified&orderby=submitted&direction=desc&embed=game,category,level,platform,region&max=7`
+				&status=verified&orderby=submitted&direction=desc&embed=game,category,level,platform,region&max=5`
 			)
 			.then(function(data) {
 				return data;

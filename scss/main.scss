@@ -1,6 +1,6 @@
 @import 'variables';
 
-.debug{
+.debug {
 	border: 1px solid red;
 }
 
@@ -10,73 +10,109 @@ html {
 }
 
 body {
-	background: $primary-color;
-	color: $primary-text-color;
+	background: $secondary-color;
+	color: $secondary-text-color;
 	margin: 0;
 	display: grid;
 	grid-gap: 0;
 	grid-template-areas:
-	"header"
-	"content"
-	"sidebar"
-	"ad"
-	"footer";
+		"header"
+		"content"
+		"sidebar"
+		"ad"
+		"footer";
 }
 
-a{
+a {
 	color: $primary-text-color;
 }
 
 /* Grid Areas */
-.content_wrapper{
+.content_wrapper {
+	background: $primary-color;
+	color: $primary-text-color;
+	min-height: 50vh;
 	grid-area: content;
 	padding: 20px;
 	display: grid;
 	grid-gap: 10px;
 	grid-template-areas:
-	"side"
-	"main";
+		"side"
+		"main";
 
-	.side{
+	.side {
 		grid-area: side;
 	}
 
-	.main{
+	.main {
 		grid-area: main;
 	}
 
-	.search{
+	.search {
 		grid-area: side / side / main / main;
 	}
 }
 
-header{
+header {
 	grid-area: header;
 	position: sticky;
 	top: 0;
 }
 
-.sidebar{
+.sidebar {
 	grid-area: sidebar;
 	background: $tertiary-color;
 	color: $tertairy_text_color;
 	padding: 20px;
 }
 
-.ad{
+.ad {
 	grid-area: ad;
 	background: $tertiary-color;
 	color: $tertairy_text_color;
 	padding: 20px;
 }
 
-.footer_wrapper{
+.footer_wrapper {
+	text-align: center;
+	background: $secondary-color;
 	grid-area: footer;
 	padding: 20px;
 }
 
+/* Pagination */
+.pagination {
+	display: flex;
+	justify-content: space-around;
+}
+
+.pagination_runs {
+	display: flex;
+	justify-content: space-between;
+}
+
+.pages {
+	display: inline-block;
+
+	button {
+		border-color: $tertairy-text-color;
+		outline: none;
+		width: 100px;
+		border-radius: 8px;
+		padding: 10px;
+		background-color: $secondary-color;
+		color: $tertairy-text-color;
+	}
+
+	&:active {
+		position: relative;
+		top: 2px;
+		left: 2px;
+	}
+}
 
 //Imports 
+@import 'home';
 @import 'header';
 @import 'media';
 @import 'userdata';
