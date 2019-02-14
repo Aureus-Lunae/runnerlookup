@@ -9,7 +9,7 @@ html {
 
 body {
   background: #333333;
-  color: white;
+  color: #e6e6e6;
   margin: 0;
   display: grid;
   grid-gap: 0;
@@ -17,7 +17,7 @@ body {
 }
 
 a {
-  color: white;
+  color: #e6e6e6;
 }
 
 /* Grid Areas */
@@ -75,7 +75,7 @@ header a:hover {
 }
 header .headerwrapper h1 {
   font-size: 2.5em;
-  background: #262626;
+  background: #1a1a1a;
   margin: 0;
   padding: 10px;
   text-decoration: none;
@@ -177,7 +177,7 @@ header .headerwrapper h1 {
   text-decoration: none;
 }
 .runs .video {
-  margin-top: 20px;
+  margin: 12px 0;
   position: relative;
   overflow: hidden;
   padding-top: 56.25%;
@@ -188,6 +188,9 @@ header .headerwrapper h1 {
   left: 0;
   width: 100%;
   height: 100%;
+}
+.runs .times {
+  font-size: 1.1em;
 }
 
 /*# sourceMappingURL=main.css.map */

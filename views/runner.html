@@ -41,17 +41,20 @@
 
 		<!-- Latest Runs -->
 		<div class="runs" ng-repeat="pbRun in pbRuns">
-			<h2 class="title"><a href="{{pbRun.weblink}}"> {{pbRun.game.data.names.international}} 
-				<span ng-if="pbRun.category.data.name"> - {{pbRun.category.data.name}}<span></a>
-			</h2>
-			<div class="level" ng-if="pbRun.level.data.name">Level:
-				{{pbRun.level.data.name}}</div>
+			<h2 class="title"><a href="{{pbRun.weblink}}"> {{pbRun.game.data.names.international}} </a></h2>
+
+			<div class="times">
+				<span ng-if="pbRun.category.data.name">{{pbRun.category.data.name}}</span>
+				<span ng-if="pbRun.category.data.name && pbRun.level.data.name"> - </span>
+				<span class="level" ng-if="pbRun.level.data.name">Level:
+				{{pbRun.level.data.name}}</span>
+				<span> in {{ pbRun.times.primary_t | speedruntime }}</span>
+			</div>
 
 			<!-- Videos -->
 			<div class="video" ng-if="pbRun.videos.links" ng-repeat="video in pbRun.videos.links"> 
 				<iframe ng-src="{{ video.uri | video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen gesture="media" class="youtube">Not supported</iframe>
 			</div>
-
 
 			<div class="date">{{pbRun.date | date }}</div>
 			<div class="console"> {{ pbRun.platform.data.name }}
@@ -59,7 +62,7 @@
 				<span class="region" ng-if="pbRun.region.data.name"> [{{ pbRun.region.data.name }}] </span>
 			</div>
 
-			<div class="times"> {{ pbRun.times.primary_t | speedruntime }}</div>
+			
 
 			<!-- pbRun.category.data.rules -->
 	

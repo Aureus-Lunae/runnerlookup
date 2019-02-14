@@ -33,7 +33,7 @@ runnersApp.filter(`time`, function() {
 	}
 });
 
-runnersApp.filter(`speedruntime`, function() {
+runnersApp.filter(`secToTimeDec`, function() {
 	return function(input) {
 		let time = Math.floor(input);
 		let secondsDec = Math.round((input - time)*1000);
@@ -47,6 +47,26 @@ runnersApp.filter(`speedruntime`, function() {
 		seconds = `${seconds}.${secondsDec}`;
 		} 
 		return `${hour}:${minutes}:${seconds}`;
+	}
+});
+
+runnersApp.filter(`speedruntime`, function() {
+	return function(input) {
+		let time = Math.floor(input);
+		let secondsDec = Math.round((input - time)*1000);
+		let hour = Math.floor(time / 3600);
+		
+		let minutes = Math.floor(time % 3600 / 60);
+		let seconds = time % 3600 % 60;
+		if (secondsDec !== 0){
+		seconds = `${seconds}.${secondsDec}`;
+		} 
+		if (hour > 0) {
+			return `${hour}h ${minutes}m ${seconds}s`;
+		} else {
+			return `${minutes}m ${seconds}s`;
+		}
+		
 	}
 });
 
