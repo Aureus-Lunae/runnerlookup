@@ -8,11 +8,11 @@ html {
 }
 
 body {
-  background: #4d4d4d;
+  background: #333333;
   color: white;
   margin: 0;
   display: grid;
-  grid-gap: 15px;
+  grid-gap: 0;
   grid-template-areas: "header" "content" "sidebar" "ad" "footer";
 }
 
@@ -23,7 +23,7 @@ a {
 /* Grid Areas */
 .content_wrapper {
   grid-area: content;
-  padding: 5px;
+  padding: 20px;
   display: grid;
   grid-gap: 10px;
   grid-template-areas: "side" "main";
@@ -46,17 +46,27 @@ header {
 
 .sidebar {
   grid-area: sidebar;
+  background: #404040;
+  color: #fdff99;
+  padding: 20px;
 }
 
 .ad {
   grid-area: ad;
+  background: #404040;
+  color: #fdff99;
+  padding: 20px;
 }
 
 .footer_wrapper {
   grid-area: footer;
+  padding: 20px;
 }
 
 /* Header */
+header {
+  z-index: 2;
+}
 header a {
   text-decoration: none;
 }
@@ -65,7 +75,7 @@ header a:hover {
 }
 header .headerwrapper h1 {
   font-size: 2.5em;
-  background: #333333;
+  background: #262626;
   margin: 0;
   padding: 10px;
   text-decoration: none;
@@ -83,7 +93,7 @@ header .headerwrapper h1 {
     grid-template-areas: "side		main";
   }
 }
-@media (min-width: 760px) {
+@media (min-width: 768px) {
   body {
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-areas: "header 	header		header" "sidebar 	content		ad" "sidebar 	content		ad" "footer 	footer		footer";
@@ -109,7 +119,7 @@ header .headerwrapper h1 {
 .user_data .runner_name {
   margin: 0;
   padding: 5px 0;
-  font-size: 1.6em;
+  font-size: 1.8em;
 }
 .user_data .region,
 .user_data .country,
@@ -157,6 +167,27 @@ header .headerwrapper h1 {
     position: sticky;
     top: 90px;
   }
+}
+/* Runs */
+.runs .title {
+  font-size: 1.5em;
+  margin: 0;
+}
+.runs .title a {
+  text-decoration: none;
+}
+.runs .video {
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+.runs .video .youtube {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */

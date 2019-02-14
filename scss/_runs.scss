@@ -1,0 +1,27 @@
+/* Runs */ 
+.runs{
+
+	.title{
+		font-size: 1.5em;
+		margin: 0;
+		a{
+			text-decoration: none
+		}
+	}
+
+	.video{
+		margin-top: 20px;
+		position: relative;
+		overflow: hidden;
+    padding-top: 56.25%;
+
+		.youtube{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}		
+	}
+
+}

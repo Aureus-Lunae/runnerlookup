@@ -14,7 +14,7 @@ body {
 	color: $primary-text-color;
 	margin: 0;
 	display: grid;
-	grid-gap: 15px;
+	grid-gap: 0;
 	grid-template-areas:
 	"header"
 	"content"
@@ -30,7 +30,7 @@ a{
 /* Grid Areas */
 .content_wrapper{
 	grid-area: content;
-	padding: 5px;
+	padding: 20px;
 	display: grid;
 	grid-gap: 10px;
 	grid-template-areas:
@@ -58,14 +58,21 @@ header{
 
 .sidebar{
 	grid-area: sidebar;
+	background: $tertiary-color;
+	color: $tertairy_text_color;
+	padding: 20px;
 }
 
 .ad{
 	grid-area: ad;
+	background: $tertiary-color;
+	color: $tertairy_text_color;
+	padding: 20px;
 }
 
 .footer_wrapper{
 	grid-area: footer;
+	padding: 20px;
 }
 
 
@@ -73,3 +80,4 @@ header{
 @import 'header';
 @import 'media';
 @import 'userdata';
+@import 'runs';

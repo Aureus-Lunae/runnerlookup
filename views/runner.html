@@ -40,12 +40,18 @@
 	<div class="main">
 
 		<!-- Latest Runs -->
-		<div class="PB" ng-repeat="pbRun in pbRuns">
+		<div class="runs" ng-repeat="pbRun in pbRuns">
 			<h2 class="title"><a href="{{pbRun.weblink}}"> {{pbRun.game.data.names.international}} 
 				<span ng-if="pbRun.category.data.name"> - {{pbRun.category.data.name}}<span></a>
 			</h2>
 			<div class="level" ng-if="pbRun.level.data.name">Level:
 				{{pbRun.level.data.name}}</div>
+
+			<!-- Videos -->
+			<div class="video" ng-if="pbRun.videos.links" ng-repeat="video in pbRun.videos.links"> 
+				<iframe ng-src="{{ video.uri | video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen gesture="media" class="youtube">Not supported</iframe>
+			</div>
+
 
 			<div class="date">{{pbRun.date | date }}</div>
 			<div class="console"> {{ pbRun.platform.data.name }}
@@ -57,10 +63,7 @@
 
 			<!-- pbRun.category.data.rules -->
 	
-			<!-- Videos -->
-			<div class="video" ng-if="pbRun.videos.links" ng-repeat="video in pbRun.videos.links"> 
-				<iframe ng-src="{{ video.uri | video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="youtube">Not supported</iframe>
-			</div>
+
 
 			<!-- Comments -->
 			<div class="comment" style="white-space: pre-wrap;"> {{ pbRun.comment }} </div>
