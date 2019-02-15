@@ -3,7 +3,7 @@
 }
 
 html {
-  font-family: "Laila", serif;
+  font-family: "Lato", sans-serif;
   font-size: 16px;
 }
 
@@ -18,6 +18,15 @@ body {
 
 a {
   color: #e6e6e6;
+}
+
+.no_mobile {
+  margin-top: 40px;
+  display: none;
+}
+.no_mobile img {
+  object-fit: scale-down;
+  max-width: 150px;
 }
 
 /* Grid Areas */
@@ -48,17 +57,21 @@ header {
 }
 
 .sidebar {
+  overflow: hidden;
   grid-area: sidebar;
   background: #404040;
   color: #fdff99;
   padding: 20px;
+  z-index: 1;
 }
 
 .ad {
+  overflow: hidden;
   grid-area: ad;
   background: #404040;
   color: #fdff99;
   padding: 20px;
+  z-index: 1;
 }
 
 .footer_wrapper {
@@ -98,12 +111,20 @@ header {
 }
 
 /* Home */
-.search .no_results {
+.search .no_results .title {
+  width: 100%;
   display: flex;
   justify-content: center;
 }
+.search .no_results .img {
+  height: 76px;
+}
+.search .no_results img {
+  height: 64px;
+}
 .search .no_results h1 {
-  font-size: 3em;
+  font-family: "Laila", serif;
+  font-size: 2.5em;
   background: linear-gradient(to right, #f8da6d 0%, #b7c1cd 35%, #b7c1cd 55%, #ebb170 100%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -112,6 +133,36 @@ header {
 .search form {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+}
+.search form input {
+  margin-bottom: 5px;
+  font-size: 1.1em;
+  border-radius: 8px;
+  padding: 3px 8px;
+  background: #404040;
+  color: #fdff99;
+  border: #fdff99 2px outset;
+  outline: none;
+}
+.search form input:focus {
+  border: #e6e6e6 2px inset;
+}
+.search form button {
+  font-size: 1.1em;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  border-color: #fdff99;
+  outline: none;
+  width: 150px;
+  border-radius: 8px;
+  background-color: #1a1a1a;
+  color: #fdff99;
+}
+.search form button:active {
+  position: relative;
+  top: 2px;
+  left: 2px;
 }
 .search .container h2 {
   font-size: 1.8em;
@@ -129,6 +180,35 @@ header {
   margin-bottom: 3px;
 }
 
+.sonic {
+  height: 76px !important;
+  animation: run-sonic 6s linear infinite;
+}
+
+.pikachu {
+  animation: run-mirrored 8s linear infinite;
+}
+
+.mario {
+  animation: run-mirrored 12s linear infinite;
+}
+
+@keyframes run-sonic {
+  0% {
+    transform: translateX(-60vw) translateY(10px) scaleX(-1);
+  }
+  100% {
+    transform: translateX(110vw) translateY(10px) scaleX(-1);
+  }
+}
+@keyframes run-mirrored {
+  0% {
+    transform: translateX(-60vw);
+  }
+  100% {
+    transform: translateX(110vw);
+  }
+}
 /* Header */
 header {
   z-index: 2;
@@ -140,6 +220,7 @@ header a:hover {
   text-decoration: underline;
 }
 header .headerwrapper h1 {
+  font-family: "Laila", serif;
   font-size: 2.5em;
   background: #1a1a1a;
   margin: 0;
@@ -159,6 +240,10 @@ header .headerwrapper h1 {
     grid-template-columns: 1fr 2fr;
     grid-template-areas: "side		main";
   }
+
+  .no_mobile {
+    display: block;
+  }
 }
 @media (min-width: 768px) {
   body {
@@ -170,6 +255,45 @@ header .headerwrapper h1 {
     min-height: 80vh;
     grid-template-columns: 1fr 2fr;
     grid-template-areas: "side		main";
+  }
+
+  .search .no_results h1 {
+    font-size: 3em;
+  }
+  .search form input {
+    font-size: 1.3em;
+  }
+  .search form button {
+    font-size: 1.3em;
+  }
+
+  .sonic {
+    animation: run-sonic 10s linear infinite;
+  }
+
+  .pikachu {
+    animation: run-mirrored 15s linear infinite;
+  }
+
+  .mario {
+    animation: run-mirrored 20s linear infinite;
+  }
+
+  @keyframes run-sonic {
+    0% {
+      transform: translateX(-20vw) translateY(10px) scaleX(-1);
+    }
+    100% {
+      transform: translateX(100vw) translateY(10px) scaleX(-1);
+    }
+  }
+  @keyframes run-mirrored {
+    0% {
+      transform: translateX(-20vw);
+    }
+    100% {
+      transform: translateX(100vw);
+    }
   }
 }
 @media (min-width: 1280px) {
@@ -183,12 +307,42 @@ header .headerwrapper h1 {
     grid-template-columns: 1fr 3fr;
     grid-template-areas: "side		main";
   }
+
+  .search .no_results h1 {
+    font-size: 5em;
+  }
+  .search .no_results .img {
+    height: 96px;
+  }
+  .search .no_results img {
+    height: 81px;
+  }
+  .search form input {
+    font-size: 1.5em;
+  }
+  .search form button {
+    font-size: 1.5em;
+  }
+
+  .sonic {
+    height: 96px !important;
+    animation: run-sonic 18s linear infinite;
+  }
+
+  .pikachu {
+    animation: run-mirrored 25s linear infinite;
+  }
+
+  .mario {
+    animation: run-mirrored 30s linear infinite;
+  }
 }
 /* user data */
 .user_data .runner_name {
   margin: 0;
   padding: 5px 0;
   font-size: 1.8em;
+  font-family: "Laila", serif;
 }
 .user_data .region,
 .user_data .country,

@@ -2,11 +2,24 @@
 
 .search {
 	.no_results {
-		display: flex;
-		justify-content: center;
+
+		.title {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+		}
+
+		.img {
+			height: 76px;
+		}
+
+		img {
+			height: 64px;
+		}
 
 		h1 {
-			font-size: 3em;
+			font-family: 'Laila', serif;
+			font-size: 2.5em;
 			background: linear-gradient(to right, hsla(47, 91%, 70%, 1) 0%, hsla(213, 18%, 76%, 1) 35%, hsla(213, 18%, 76%, 1) 55%, hsla(32, 75%, 68%, 1) 100%);
 			background-clip: text;
 			-webkit-background-clip: text;
@@ -17,6 +30,40 @@
 	form {
 		display: flex;
 		justify-content: center;
+		flex-wrap: wrap;
+
+		input {
+			margin-bottom: 5px;
+			font-size: 1.1em;
+			border-radius: 8px;
+			padding: 3px 8px;
+			background: $tertiary-color;
+			color: $tertairy_text_color;
+			border: $tertairy_text_color 2px outset;
+			outline: none;
+
+			&:focus {
+				border: $primary_text_color 2px inset;
+			}
+		}
+
+		button {
+			font-size: 1.1em;
+			margin-left: 5px;
+			margin-bottom: 5px;
+			border-color: $tertairy-text-color;
+			outline: none;
+			width: 150px;
+			border-radius: 8px;
+			background-color: $secondary-color;
+			color: $tertairy-text-color;
+
+			&:active {
+				position: relative;
+				top: 2px;
+				left: 2px;
+			}
+		}
 	}
 
 	.container {
@@ -38,5 +85,38 @@
 			}
 		}
 
+	}
+}
+
+.sonic {
+	height: 76px !important;
+	animation: run-sonic 6s linear infinite;
+}
+
+.pikachu {
+	animation: run-mirrored 8s linear infinite;
+}
+
+.mario {
+	animation: run-mirrored 12s linear infinite;
+}
+
+@keyframes run-sonic {
+	0% {
+		transform: translateX(-60vw) translateY(10px) scaleX(-1);
+	}
+
+	100% {
+		transform: translateX(110vw) translateY(10px) scaleX(-1);
+	}
+}
+
+@keyframes run-mirrored {
+	0% {
+		transform: translateX(-60vw);
+	}
+
+	100% {
+		transform: translateX(110vw);
 	}
 }

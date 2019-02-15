@@ -1,54 +1,61 @@
 /* user data */
 
-.user_data{
-	.runner_name{
+.user_data {
+
+	.runner_name {
 		margin: 0;
 		padding: 5px 0;
 		font-size: 1.8em;
+		font-family: 'Laila', serif;
 	}
 
 	.region,
 	.country,
-	.starting_date{
+	.starting_date {
 		font-size: 1.1em;
 	}
 
-	.social_media{
+	.social_media {
 		display: inline-block;
 		padding: 3px;
 		font-size: 1.3em;
 
-		.fa-twitch{
+		.fa-twitch {
 			color: hsla(267, 40%, 80%, 1);
-			&:hover{
+
+			&:hover {
 				color: hsla(267, 60%, 90%, 1);
 			}
 		}
 
-		.fa-twitter{
+		.fa-twitter {
 			color: hsla(191, 90%, 71%, 1);
-			&:hover{
+
+			&:hover {
 				color: hsla(191, 90%, 85%, 1);
 			}
 		}
 
-		.fa-youtube{
+		.fa-youtube {
 			color: hsla(20, 100%, 75%, 1);
-			&:hover{
+
+			&:hover {
 				color: hsla(10, 100%, 85%, 1);
 			}
 		}
 
-		.fa-flag-checkered{
+		.fa-flag-checkered {
 			color: hsla(47, 91%, 70%, 1);
-			&:hover{
+
+			&:hover {
 				color: hsla(213, 18%, 76%, 1);
 			}
 		}
 
-		.fa-trophy{
+		.fa-trophy {
 			color: hsla(40, 76%, 74%, 1);
-			&:hover{
+
+			&:hover {
 				color: hsla(40, 80%, 80%, 1);
 			}
 		}
@@ -57,8 +64,8 @@
 }
 
 @media (min-width: 520px) {
-	.user_data{
-	position: sticky;
-	top: 90px;
-}
+	.user_data {
+		position: sticky;
+		top: 90px;
+	}
 }

@@ -9,28 +9,59 @@
 	<meta name="author" content="Erwin Korsten" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Speedrunner Lookup</title>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
-	 integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-	 crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-route.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Laila:400,700&amp;subset=latin-ext" rel="stylesheet">
-		<link href="css/main.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Laila:400,700|Lato:400,700&amp;subset=latin-ext" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<style>
+	.sidebar {
+		background: hsla(0, 0%, 25%, 1) url("https://www.speedrun.com/images/logo.png") no-repeat;
+		background-position: center;
+		background-size: contain;
+		min-height: 128px;
+		cursor: pointer;
+	}
+
+	.ad {
+		background: hsla(0, 0%, 25%, 1) url("/img/sidebars/speedrunweekly.png") no-repeat;
+		background-position: center;
+		background-size: contain;
+		min-height: 128px;
+		cursor: pointer;
+	}
+
+	@media (min-width: 520px) {
+		.ad {
+			background: hsla(0, 0%, 25%, 1) url("/img/sidebars/speedrunweekly.png") no-repeat;
+			background-size: contain;
+			background-position: center;
+		}
+
+		.sidebar {
+			background: hsla(0, 0%, 25%, 1) url("https://www.speedrun.com/images/trophy.png") no-repeat;
+			background-position: center;
+			background-size: contain;
+		}
+	}
+	</style>
 </head>
 
 <body ng-app="runnersApp">
 
 	<header>
-		<a href="/"><div class="headerwrapper">
-			<h1>Speedrunner Lookup</h1>
-		</div></a>
+		<a href="/">
+			<div class="headerwrapper">
+				<h1>Speedrunner Lookup</h1>
+			</div>
+		</a>
 	</header>
 
-	<div class="content_wrapper" ng-view>	</div>
+	<div class="content_wrapper" ng-view> </div>
 
-	<div class="sidebar"></div>
+	<div class="sidebar" onclick="window.location=`https://www.speedrun.com/`"></div>
 
-	<div class="ad"></div>
+	<div class="ad" onclick="window.location=`https://discord.gg/NncPJKy`"></div>
 
 	<div class="footer_wrapper">
 		Made by Erwin Korsten. All data are taken from the api of speedrun.com.

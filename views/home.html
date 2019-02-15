@@ -1,13 +1,20 @@
 <div class="search">
 
 	<div class="no_results" ng-if="!runners">
-		<h1>Speedrunner Lookup</h1>
+		<div class="title">
+			<h1>Speedrunner Lookup</h1>
+		</div>
+		<div class="img">
+			<img class="sonic" src="/img/sonic.gif" alt="sonic" />
+			<img class="mario" src="/img/mario.gif" alt="mario" />
+			<img class="pikachu" src="/img/pikachu.gif" alt="mario" />
+		</div>
 	</div>
+
 	<form ng-submit="getRunners()">
 		<input type="text" name="search" ng-model="search" id="search">
-		<button type="submit">Search</button>
+		<button type="submit">SEARCH</button>
 	</form>
-
 
 	<div class="container">
 		<h2 ng-if="runners">Runners</h2>
