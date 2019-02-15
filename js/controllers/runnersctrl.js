@@ -4,11 +4,11 @@ runnersApp.controller(`runnersCtrl`, [`$scope`, `runners`, function($scope,
 
 	$scope.getRunners = function() {
 		console.log(`getRunners Started`);
-		console.log(`Scope: ${$scope.search}`);
 		if ($scope.search) {
-			console.log(`Seach: ${this.search}`);
+			$scope.loading = true;
 			runners.getRunners(this.search)
 				.then((runnersOutput) => {
+					$scope.loading = false;
 					$scope.runners = runnersOutput.data.data;
 					$scope.pagination = runnersOutput.data.pagination;
 					console.log(runnersOutput.data.data);
@@ -17,12 +17,13 @@ runnersApp.controller(`runnersCtrl`, [`$scope`, `runners`, function($scope,
 	}
 
 	$scope.changePage = function(pageUrl) {
+		$scope.loading = true;
 		runners.pageRunners(pageUrl)
 			.then((runnersOutput) => {
+				$scope.loading = false;
 				$scope.runners = runnersOutput.data.data;
 				$scope.pagination = runnersOutput.data.pagination;
 			});
 	}
-
 
 }]);

@@ -1,6 +1,6 @@
 @media (min-width: 520px) {
 	body {
-		grid-template-columns: 25vw 75vw;
+		grid-template-columns: 1fr 3fr;
 		grid-template-areas:
 			"header 	header"
 			"sidebar 	content"
@@ -10,7 +10,7 @@
 
 	.content_wrapper {
 		min-height: 80vh;
-		grid-template-columns: 25vw 50vw;
+		grid-template-columns: 1fr 2fr;
 		grid-template-areas:
 			"side		main";
 	}
@@ -23,7 +23,7 @@
 
 @media (min-width: 768px) {
 	body {
-		grid-template-columns: 20vw 60vw 20vw;
+		grid-template-columns: 1fr 3fr 1fr;
 		grid-template-areas:
 			"header 	header		header"
 			"sidebar 	content		ad"
@@ -33,7 +33,7 @@
 
 	.content_wrapper {
 		min-height: 80vh;
-		grid-template-columns: 20vw 40vw;
+		grid-template-columns: 1fr 2fr;
 		grid-template-areas:
 			"side		main";
 	}
@@ -88,7 +88,7 @@
 
 @media (min-width: 1280px) {
 	body {
-		grid-template-columns: 15vw 4fr 15vw;
+		grid-template-columns: 1fr 4fr 1fr;
 		grid-template-areas:
 			"header 	header		header"
 			"sidebar 	content		ad"
@@ -98,7 +98,7 @@
 
 	.content_wrapper {
 		min-height: 80vh;
-		grid-template-columns: 15vw 3fr;
+		grid-template-columns: 1fr 3fr;
 		grid-template-areas:
 			"side		main";
 	}

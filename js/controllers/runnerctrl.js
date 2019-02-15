@@ -79,16 +79,15 @@ runnersApp.controller(`runnerCtrl`, [`$scope`, `runners`, `$routeParams`,
 
 		const getRunnerInfo = function() {
 			getImg();
-
+			$scope.loading = true;
 			runners.runnerInfo($routeParams.id)
 				.then((runnerInfo) => {
-					console.log(runnerInfo.data);
+					$scope.loading = false;
 					$scope.runner = runnerInfo.data.data;
 				});
 
 			runners.runnerPB($routeParams.id)
 				.then((runnerPB) => {
-					console.log(runnerPB.data);
 					$scope.pbRuns = runnerPB.data.data;
 					$scope.pagination = runnerPB.data.pagination;
 				});
@@ -98,8 +97,10 @@ runnersApp.controller(`runnerCtrl`, [`$scope`, `runners`, `$routeParams`,
 
 		$scope.changePage = function(pageUrl) {
 			getImg();
+			$scope.loading = true;
 			runners.pageRunners(pageUrl)
 				.then((runnersOutput) => {
+					$scope.loading = false;
 					$scope.pbRuns = runnersOutput.data.data;
 					$scope.pagination = runnersOutput.data.pagination;
 				});
